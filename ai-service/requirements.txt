@@ -1,0 +1,18 @@
+# ResolveAI ML and speech service dependencies
+
+fastapi
+uvicorn
+python-multipart
+python-dotenv
+
+# Speech recognition
+faster-whisper==1.2.1
+# faster-whisper 1.2.1 calls av.open(metadata_errors="ignore"),
+# which PyAV removed in 15.0.0. 14.4.0 has no Windows wheel,
+# so pin the last 14.x release that ships one.
+av==14.2.0
+
+# Complaint classification model
+scikit-learn
+joblib
+numpy
